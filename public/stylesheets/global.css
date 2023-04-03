@@ -1,0 +1,28 @@
+*:focus {
+    outline: none;
+}
+html {
+    background: #f2f2f2;
+}
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+h1 {
+    margin: 0;
+    font-size: 33px;
+    color: #fff;
+    padding: 0 10%;
+}
+h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ccc;
+    padding: 0 10%;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}

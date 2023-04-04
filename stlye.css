@@ -80,3 +80,18 @@
     color: var(--color-white);
     font-size: 3rem;
 }
+
+#main-page {
+    display: flex;
+    width: 300px;
+    margin: 0.5rem;
+    border-radius: 8px;
+}
+
+/* chart.js */
+.chartContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}

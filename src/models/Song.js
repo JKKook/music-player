@@ -1,7 +1,14 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const songSchema = new mongoose.Schema({});
+// Define Schemes
+const songSchema = new mongoose.Schema({
+    name: String,
+    artist: String,
+    listeners: String,
+    image: Array,
+});
 
-const Song = mongoose.model("Song", songSchema);
+// Create Model
+const Song = mongoose.model('Song', songSchema);
 
 export default Song;

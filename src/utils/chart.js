@@ -1,43 +1,4 @@
-import Song from '../models/Song';
-import User from '../models/User';
-module.exports = function (app, Song) {
-    app.get('/api/charts', (req, res) => {
-        Song.find((err, charts) => {
-            if (err) return res.status(500).send({ error: 'database failure' });
-            res.json(charts);
-        });
-    });
-};
-
-// [CONFIGURE ROUTER]
-export const home = async (req, res) => {
-    // Create Document
-    const chart = await Song.find({}).sort({ listeners: -1 });
-    app.get('/', (req, res) => {
-        res.send('charts');
-    });
-    return res.render('home', { pageTitle: 'Home', chart });
-};
-
-export const createDoc = async () => {
-    app.post('/api/charts', (req, res) => {
-        data.name = req.name;
-        data.artist = req.artist;
-        data.listeners = req.listeners;
-
-        data.save((err, val) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('save');
-            }
-        });
-    });
-};
-
-const BASIC_URL = 'https://ws.audioscrobbler.com/2.0/';
-
-const data = new Song([
+const ressult = [
     {
         name: 'Believer',
         artist: 'Imagine Dragons',
@@ -240,4 +201,4 @@ const data = new Song([
         url: 'https://www.last.fm/music/R.+Kelly/_/I+Believe+I+Can+Fly',
         listeners: '323708',
     },
-]);
+];

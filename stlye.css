@@ -89,9 +89,41 @@
 }
 
 /* chart.js */
+
 .chartContainer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem;
+}
+
+.chart-lists {
+    list-style: none;
+}
+
+.chart-list {
+    width: 500px;
+    margin-bottom: 4rem;
+}
+
+.main-info {
+    display: flex;
+    height: 30px;
+}
+
+.chart-title {
+    width: 100%;
+}
+
+.chart-rank {
+    margin-right: 0.5rem;
+}
+
+.chart-rank::after {
+    content: '.';
+}
+
+.chart-image {
+    width: 100px;
+    height: 100px;
 }

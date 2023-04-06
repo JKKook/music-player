@@ -13,7 +13,7 @@ module.exports = function (app, Song) {
 export const home = async (req, res) => {
     // Create Document
     const chart = await Song.find({}).sort({ listeners: -1 });
-    app.get('/', (req, res) => {
+    app.get('/api/charts', (req, res) => {
         res.send('charts');
     });
     return res.render('home', { pageTitle: 'Home', chart });

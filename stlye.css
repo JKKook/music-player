@@ -1,6 +1,28 @@
 @import url('/public/stylesheets/theme.css');
 @import url('/public/stylesheets/global.css');
 
+body {
+    overflow: auto;
+}
+body::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://picsum.photos/600/300');
+
+    background-size: cover;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(10px);
+    transform: scale(1.02);
+    z-index: -1;
+    content: '';
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -134,4 +156,12 @@
     font-size: 1.5rem;
     text-align: center;
     transform: translateY(-40px);
+}
+
+.chart-play:hover {
+    color: var(--color-gray-900);
+}
+
+.chart-play:active {
+    color: var(--color-gray-500);
 }

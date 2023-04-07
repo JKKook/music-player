@@ -2,6 +2,7 @@
 import items from '../../src/data/music-data.json' assert { type: 'json' };
 // export default
 const $mainPage = document.querySelector('#main-page');
+const playBtn = document.querySelector('.fa-soild');
 
 const musicChart = {
     soundRankOne: new Audio('/audios/Hot-potato_Something.mp3'),
@@ -22,7 +23,7 @@ const musicChart = {
 const getMusic = () => {
     // sound.play();
     const arrayItems = Array(items);
-    console.log(arrayItems);
+    // console.log(arrayItems);
     // layout
 
     const chartBox = document.createElement('div');
@@ -74,6 +75,7 @@ const getMusic = () => {
             // console.log(e.target.matches('.fa-circle-play'));
 
             if (e.target.matches('.fa-circle-play')) {
+                playButton.innerHTML = `<i class="fa-solid fa-circle-pause"></i>`;
                 if (musicChart) {
                     console.log(musicChart);
                     // 객체 key를 변수로 접근
@@ -81,6 +83,18 @@ const getMusic = () => {
                     return selected.play();
                 }
             }
+            const stopBtn = document.querySelector('.fa-circle-pause');
+            stopBtn.addEventListener('click', (e) => {
+                if (e.target.matches('.fa-circle-pause')) {
+                    stopBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
+                    if (musicChart) {
+                        console.log(musicChart);
+                        // 객체 key를 변수로 접근
+                        const selected = musicChart[item.audio];
+                        return selected.pause();
+                    }
+                }
+            });
         });
 
         mainInfo.appendChild(chartRank);
@@ -94,18 +108,3 @@ const getMusic = () => {
     });
 };
 getMusic();
-// getMusic().then((musicChart) => {
-//     console.log(musicChart);
-//     // console.log(
-//     //     musicChart.results.trackmatches.track.sort((a, b) => {
-//     //         a = parseInt(a.listeners);
-//     //         b = parseInt(b.listeners);
-
-//     //         if (a < b) return 1;
-//     //         if (a > b) return -1;
-
-//     //         return 0;
-//     //     }),
-//     // );
-
-// });

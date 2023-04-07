@@ -3,37 +3,21 @@ import items from '../../src/data/music-data.json' assert { type: 'json' };
 // export default
 const $mainPage = document.querySelector('#main-page');
 
-const soundRankOne = new Audio('/audios/Hot-potato_Something.mp3');
-const soundRankTwo = new Audio('/audios/Seongsigyeong_Solar-system.mp3');
-const soundRanKThree = new Audio('/audios/Black-skirt_Antifreeze.mp3');
-const soundRankFour = new Audio(
-    '/audios/Thorn-apple_Our-nights-are-more-beautiful-than-your-days.mp3',
-);
-const soundRankFive = new Audio(
-    '/audios/Mc-the-Max_Wind-Beneath-your-wings.mp3',
-);
-const soundRankSix = new Audio('/audios/Thorn-apple_Shimmer.mp3');
-const soundRankSeven = new Audio('/audios/Thorn-apple_Blue-spring.mp3');
-const soundRankEight = new Audio('/audios/Jiteun_Disappering-of-things.mp3');
-const soundRankNine = new Audio('/audios/Leeseoungi_Love-of-prohibition.mp3');
-const soundRankTen = new Audio('/audios/Leeseoungi_Emergency-room.mp3');
-const soundRankEleven = new Audio(
-    '/audios/Mc-the-Max_Goodbye-for-a-moment.mp3',
-);
-
-const musicChart = [
-    soundRankOne,
-    soundRankTwo,
-    soundRanKThree,
-    soundRankFour,
-    soundRankFive,
-    soundRankSix,
-    soundRankSeven,
-    soundRankEight,
-    soundRankNine,
-    soundRankTen,
-    soundRankEleven,
-];
+const musicChart = {
+    soundRankOne: new Audio('/audios/Hot-potato_Something.mp3'),
+    soundRankTwo: new Audio('/audios/Seongsigyeong_Solar-system.mp3'),
+    soundRankThree: new Audio('/audios/Black-skirt_Antifreeze.mp3'),
+    soundRankFour: new Audio(
+        '/audios/Thorn-apple_Our-nights-are-more-beautiful-than-your-days.mp3',
+    ),
+    soundRankFive: new Audio('/audios/Mc-the-Max_Wind-Beneath-your-wings.mp3'),
+    soundRankSix: new Audio('/audios/Thorn-apple_Shimmer.mp3'),
+    soundRankSeven: new Audio('/audios/Thorn-apple_Blue-spring.mp3'),
+    soundRankEight: new Audio('/audios/Jiteun_Disappering-of-things.mp3'),
+    soundRankNine: new Audio('/audios/Leeseoungi_Love-of-prohibition.mp3'),
+    soundRankTen: new Audio('/audios/Leeseoungi_Emergency-room.mp3'),
+    soundRankEleven: new Audio('/audios/Mc-the-Max_Goodbye-for-a-moment.mp3'),
+};
 
 const getMusic = () => {
     // sound.play();
@@ -88,20 +72,14 @@ const getMusic = () => {
         playButton.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
         playButton.addEventListener('click', (e) => {
             // console.log(e.target.matches('.fa-circle-play'));
+
             if (e.target.matches('.fa-circle-play')) {
-                console.log(item.audio); // soundRank
-                // musicChart.forEach((el) => el.play());
-                musicChart.forEach((selectMusic) => {
-                    console.log(selectMusic[0]);
-                    // while (musicChart.length > 0) {
-                    //     if (selectMusic) {
-                    //         const select = selectMusic === musicChart[0];
-                    //         select.play();
-                    //         musicChart.shift();
-                    //     }
-                    // }
-                    // console.log(selectMusic);
-                });
+                if (musicChart) {
+                    console.log(musicChart);
+                    // 객체 key를 변수로 접근
+                    const selected = musicChart[item.audio];
+                    return selected.play();
+                }
             }
         });
 

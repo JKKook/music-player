@@ -1,8 +1,10 @@
 // import { sampleAPI } from '../src/utils/sample';
 import items from '../../src/data/music-data.json' assert { type: 'json' };
+import { LYRICS } from '../../src/utils/data-lyric.js';
 // export default
 const $mainPage = document.querySelector('#main-page');
-const playBtn = document.querySelector('.fa-soild');
+const $lyricContainer = document.querySelector('#lyric-container');
+const $lyric = document.querySelector('#lyric');
 
 const musicChart = {
     soundRankOne: new Audio('/audios/Hot-potato_Something.mp3'),
@@ -68,6 +70,21 @@ const getMusic = () => {
         artist.setAttribute('class', 'chart-artist');
         artist.innerText = `${item.artist}`;
 
+        // lyrics
+        const lyricIcon = document.createElement('button');
+        lyricIcon.setAttribute('class', 'lyric-button');
+        lyricIcon.innerHTML = `<i class="fa-solid fa-align-center"></i>`;
+        lyricIcon.addEventListener('click', (e) => {
+            if (e.target.matches('.fa-align-center')) {
+                const selected = LYRICS[item.lyric];
+                console.log(selected);
+                if (selected) {
+                    showUpWithLyric(selected);
+                }
+            }
+        });
+
+        // playButton
         const playButton = document.createElement('button');
         playButton.setAttribute('class', 'chart-play');
         playButton.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
@@ -89,7 +106,6 @@ const getMusic = () => {
                     stopBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
                     if (musicChart) {
                         console.log(musicChart);
-                        // 객체 key를 변수로 접근
                         const selected = musicChart[item.audio];
                         return selected.pause();
                     }
@@ -101,10 +117,31 @@ const getMusic = () => {
         mainInfo.appendChild(listTitle);
 
         list.appendChild(mainInfo);
+        //
         list.append(artist);
         list.appendChild(chartImage);
+        list.appendChild(lyricIcon);
         list.appendChild(playButton);
         chartList.appendChild(list);
     });
 };
 getMusic();
+
+const showUpWithLyric = (lyrics) => {
+    $lyricContainer.classList.remove('lyric-hide');
+    $lyric.innerText = lyrics;
+};
+
+//
+const hideLyric = document.createElement('button');
+hideLyric.setAttribute('class', 'lyric-hide-button');
+hideLyric.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+$lyricContainer.appendChild(hideLyric);
+
+const hideWithLyric = () => {
+    $lyricContainer.classList.add('lyric-hide');
+};
+
+hideLyric.addEventListener('click', () => {
+    hideWithLyric();
+});

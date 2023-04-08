@@ -5,77 +5,88 @@
             "title": "고백",
             "artist": "뜨거운 감자",
             "img": "https://cdnimg.melon.co.kr/cm/album/images/008/42/655/842655_500.jpg/melon/resize/282/quality/80/optimize",
-            "audio": "soundRankOne"
+            "audio": "soundRankOne",
+            "lyric": "lyricOne"
         },
         {
             "rank": 2,
             "title": "태양계",
             "artist": "성시경",
             "img": "https://cdnimg.melon.co.kr/cm/album/images/020/11/288/2011288_500.jpg/melon/resize/282/quality/80/optimize",
-            "audio": "soundRankTwo"
+            "audio": "soundRankTwo",
+            "lyric": "lyricTwo"
         },
         {
             "rank": 3,
             "title": "Antifreeze",
             "artist": "검정치마",
             "img": "https://cdnimg.melon.co.kr/cm/album/images/008/31/751/831751_500.jpg/melon/resize/260/quality/80/optimize",
-            "audio": "soundRankThree"
+            "audio": "soundRankThree",
+            "lyric": "lyricThree"
         },
         {
             "rank": 4,
             "title": "우리의 밤은 당신의 낮보다 아름답다",
             "artist": "쏜애플",
             "img": "https://cdnimg.melon.co.kr/cm/artistcrop/images/004/90/940/490940_500.jpg?48aad56bff831b05bddb5ccfcc3debf0/melon/resize/416/quality/80/optimize",
-            "audio": "soundRankFour"
+            "audio": "soundRankFour",
+            "lyric": "lyricFour"
         },
         {
             "rank": 5,
             "title": "그대 바람이 되어",
             "artist": "MC.THE.MAX",
             "img": "https://cdnimg.melon.co.kr/cm/album/images/026/77/556/2677556_500.jpg/melon/resize/260/quality/80/optimize",
-            "audio": "soundRankFive"
+            "audio": "soundRankFive",
+            "lyric": "lyricFive"
         },
         {
             "rank": 6,
             "title": "아지랑이",
             "artist": "쏜애플",
             "img": "https://cdnimg.melon.co.kr/cm/album/images/022/60/391/2260391_500.jpg/melon/resize/260/quality/80/optimize",
-            "audio": "soundRankSix"
+            "audio": "soundRankSix",
+            "lyric": "lyricSix"
         },
         {
             "rank": 7,
             "title": "시퍼런 봄",
             "artist": "쏜애플",
             "img": "https://cdnimg.melon.co.kr/cm/album/images/022/60/391/2260391_500.jpg/melon/resize/260/quality/80/optimize",
-            "audio": "soundRankSeven"
+            "audio": "soundRankSeven",
+            "lyric": "lyricSeven"
         },
         {
             "rank": 8,
-            "title": "사라질 것들",
+            "title": "사라져가는 것들",
             "artist": "짙은",
-            "img": "https://cdnimg.melon.co.kr/cm2/album/images/107/63/988/10763988_20211104150534_500.jpg/melon/resize/260/quality/80/optimize",
-            "audio": "soundRankEight"
+            "img": "https://image.bugsm.co.kr/album/images/200/9691/969112.jpg?version=20200306002453.0",
+            "audio": "soundRankEight",
+            "lyric": "lyricEight"
         },
         {
             "rank": 9,
             "title": "금지된 사랑",
             "artist": "이승기",
             "img": "https://cdnimg.melon.co.kr/cm2/album/images/105/32/045/10532045_20201210143401_500.jpg/melon/resize/260/quality/80/optimize",
-            "audio": "soundRankNine"
+            "audio": "soundRankNine",
+            "lyric": "lyricNine"
         },
         {
             "rank": 10,
             "title": "응급실",
             "artist": "이승기",
             "img": "https://cdnimg.melon.co.kr/cm2/album/images/105/32/045/10532045_20201210143401_500.jpg/melon/resize/260/quality/80/optimize",
-            "audio": "soundRankTen"
+            "audio": "soundRankTen",
+            "lyric": "lyricTen"
         },
         {
             "rank": 11,
             "title": "잠시만 안녕",
             "artist": "MC.THE.MAX",
-            "img": "https://cdnimg.melon.co.kr/cm/album/images/000/22/287/22287_500.jpg/melon/resize/260/quality/80/optimize",
-            "audio": "soundRankEleven"
+            "img": "https://image.bugsm.co.kr/album/images/200/222/22287.jpg?version=20230104174551.0",
+            "audio": "soundRankEleven",
+            "lyric": "lyricEleven"
         }
     ]
 }

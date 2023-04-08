@@ -108,6 +108,7 @@ body::before {
     width: 300px;
     margin: 0.5rem;
     border-radius: 8px;
+    transform: translateX(-100%);
 }
 
 /* chart.js */
@@ -121,6 +122,7 @@ body::before {
 
 .chart-lists {
     list-style: none;
+    color: var(--color-white);
 }
 
 .chart-list {
@@ -148,11 +150,13 @@ body::before {
 .chart-image {
     width: 100px;
     height: 100px;
+    border-radius: 8px;
 }
 
 .chart-play {
-    width: 100px;
+    width: 50px;
     height: 20px;
+    margin-left: 2rem;
     font-size: 1.5rem;
     text-align: center;
     transform: translateY(-40px);
@@ -164,4 +168,54 @@ body::before {
 
 .chart-play:active {
     color: var(--color-gray-500);
+}
+
+#lyric-container {
+    display: flex;
+    margin: auto;
+    /* transform: translateY(-295%); */
+    transform: translate(35%, -275%);
+
+    /* visibility: hidden; */
+}
+
+#lyric {
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.5rem;
+    width: 600px;
+    height: 1000px;
+    padding: 20px;
+    background-color: var(--color-black);
+    opacity: 0.7;
+    color: var(--color-white);
+}
+
+.lyric-hide {
+    display: none;
+    visibility: hidden;
+}
+
+.lyric-hide-button {
+    font-size: 2rem;
+    transform: translate(400%, -800%);
+}
+
+.lyric-hide-button:hover {
+    color: var(--color-red-500);
+}
+
+.lyric-button {
+    width: 50px;
+    height: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    transform: translate(20px, -40px);
+}
+
+.lyric-button:hover {
+    color: var(--color-red-300);
 }

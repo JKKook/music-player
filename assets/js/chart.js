@@ -1,11 +1,10 @@
-// import { sampleAPI } from '../src/utils/sample';
 import items from '../../src/data/music-data.json' assert { type: 'json' };
 import { LYRICS } from '../../src/utils/data-lyric.js';
-// export default
+
+// Variables
 const $mainPage = document.querySelector('#main-page');
 const $lyricContainer = document.querySelector('#lyric-container');
 const $lyric = document.querySelector('#lyric');
-
 const musicChart = {
     soundRankOne: new Audio('/audios/Hot-potato_Something.mp3'),
     soundRankTwo: new Audio('/audios/Seongsigyeong_Solar-system.mp3'),
@@ -22,11 +21,12 @@ const musicChart = {
     soundRankEleven: new Audio('/audios/Mc-the-Max_Goodbye-for-a-moment.mp3'),
 };
 
+// getMusic Method
+// Main-page 동적 태그 생성
 const getMusic = () => {
-    // sound.play();
     const arrayItems = Array(items);
-    // console.log(arrayItems);
-    // layout
+    const result = arrayItems.map((array) => array.items);
+    const resultTwo = result[0];
 
     const chartBox = document.createElement('div');
     chartBox.setAttribute('class', 'chartContainer');
@@ -37,26 +37,17 @@ const getMusic = () => {
     chartBox.appendChild(chartList);
     $mainPage.appendChild(chartBox);
 
-    // api 호출
-    // const musicChartList = chartBox.querySelector('.chart-lists');
-    // const apiChart = musicChart.results.trackmatches.track;
-
-    const result = arrayItems.map((array) => array.items);
-    const resultTwo = result[0];
-
     resultTwo.forEach((item) => {
-        // console.log('item', item);
         const list = document.createElement('li');
         list.setAttribute('class', 'chart-list');
 
         const mainInfo = document.createElement('div');
         mainInfo.setAttribute('class', 'main-info');
-        // music listener : span
+
         const chartRank = document.createElement('h2');
         chartRank.setAttribute('class', 'chart-rank');
         chartRank.innerText = `${item.rank}`;
 
-        // music title : h4
         const listTitle = document.createElement('h2');
         listTitle.setAttribute('class', 'chart-title');
         listTitle.innerText = `${item.title}`;
@@ -65,12 +56,10 @@ const getMusic = () => {
         chartImage.setAttribute('class', 'chart-image');
         chartImage.setAttribute('src', `${item.img}`);
 
-        // music artist : span
         const artist = document.createElement('h5');
         artist.setAttribute('class', 'chart-artist');
         artist.innerText = `${item.artist}`;
 
-        // lyrics
         const lyricIcon = document.createElement('button');
         lyricIcon.setAttribute('class', 'lyric-button');
         lyricIcon.innerHTML = `<i class="fa-solid fa-align-center"></i>`;
@@ -84,13 +73,10 @@ const getMusic = () => {
             }
         });
 
-        // playButton
         const playButton = document.createElement('button');
         playButton.setAttribute('class', 'chart-play');
         playButton.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
         playButton.addEventListener('click', (e) => {
-            // console.log(e.target.matches('.fa-circle-play'));
-
             if (e.target.matches('.fa-circle-play')) {
                 playButton.innerHTML = `<i class="fa-solid fa-circle-pause"></i>`;
                 if (musicChart) {
@@ -100,6 +86,7 @@ const getMusic = () => {
                     return selected.play();
                 }
             }
+
             const stopBtn = document.querySelector('.fa-circle-pause');
             stopBtn.addEventListener('click', (e) => {
                 if (e.target.matches('.fa-circle-pause')) {
@@ -117,11 +104,11 @@ const getMusic = () => {
         mainInfo.appendChild(listTitle);
 
         list.appendChild(mainInfo);
-        //
         list.append(artist);
         list.appendChild(chartImage);
         list.appendChild(lyricIcon);
         list.appendChild(playButton);
+
         chartList.appendChild(list);
     });
 };
